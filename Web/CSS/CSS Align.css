@@ -1,0 +1,26 @@
+/* Display */
+
+.Display {
+	display: block;
+	display: inline;
+	display: inline-block;
+	display: inline-flex;
+	display: flex;
+	display: grid;
+}
+
+/* Center Align Elements */
+
+.center {
+	margin: auto;
+}
+.center {
+	text-align: center;
+}
+
+/* Center  Child horizontally*/
+/* Flexbox */
+.center {
+	display: flex;
+	justify-content: center;
+}

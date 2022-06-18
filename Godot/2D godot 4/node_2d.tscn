@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://pg32l66cpnln"]
+
+[ext_resource type="Script" path="res://Area2D.gd" id="1_0uvhl"]
+[ext_resource type="Texture2D" uid="uid://c3vt1gpibn4ck" path="res://gold_1.png" id="1_r2rc8"]
+[ext_resource type="Texture2D" uid="uid://b5ux7lfowcsr6" path="res://gold_2.png" id="2_qsxdd"]
+[ext_resource type="Texture2D" uid="uid://cu463ngxg1n7j" path="res://gold_3.png" id="3_6qek4"]
+[ext_resource type="Texture2D" uid="uid://c8ect4g2xgpw1" path="res://icon.png" id="4_61xr0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h1ihg"]
+animations = [{
+"frames": [ExtResource( "1_r2rc8" ), ExtResource( "2_qsxdd" ), ExtResource( "3_6qek4" )],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gefbj"]
+radius = 24.0
+
+[sub_resource type="Animation" id="Animation_sjfph"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_penaj"]
+resource_name = "New Anim"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(0.5, 5, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -200), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s4np3"]
+_data = {
+"New Anim": SubResource( "Animation_penaj" ),
+"RESET": SubResource( "Animation_sjfph" )
+}
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(498, 347)
+script = ExtResource( "1_0uvhl" )
+metadata/_edit_group_ = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+position = Vector2(0, -197.924)
+scale = Vector2(0.5, 0.5)
+frames = SubResource( "SpriteFrames_h1ihg" )
+frame = 2
+playing = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( "CircleShape2D_gefbj" )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+libraries = {
+"": SubResource( "AnimationLibrary_s4np3" )
+}
+
+[node name="Icon" type="Sprite2D" parent="."]
+position = Vector2(496, 501)
+texture = ExtResource( "4_61xr0" )

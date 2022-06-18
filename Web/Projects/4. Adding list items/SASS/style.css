@@ -1,0 +1,40 @@
+body {
+  color: white;
+  font-family: sans-serif;
+  background: #161616;
+}
+
+.container {
+  width: 400px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  font-size: 2.5rem;
+}
+
+li {
+  border-radius: 10px;
+  padding-left: 20px;
+  padding-bottom: 3px;
+  background: rgba(255, 255, 255, 0.103);
+}
+
+input {
+  color: white;
+  font-size: 2.5rem;
+}
+
+button {
+  margin-left: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.container2 {
+  display: flex;
+}/*# sourceMappingURL=style.css.map */

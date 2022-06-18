@@ -1,0 +1,213 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Sprites/KiriFont.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/UI/grey_button04.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Sniglet-Regular.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://player/platformChar_idle.png" type="Texture" id=4]
+[ext_resource path="res://player/slimeBlue.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/gold_1.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Font.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Scenes/PlayButton.gd" type="Script" id=8]
+
+[sub_resource type="DynamicFont" id=1]
+size = 70
+outline_size = 3
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.14902, 0.137255, 0.235294, 1 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 70
+font_data = ExtResource( 7 )
+
+[node name="TitleMenu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+color = Color( 0.183289, 0.187593, 0.355469, 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 88.0
+margin_top = 96.0
+margin_right = 935.0
+margin_bottom = 167.0
+custom_colors/font_color = Color( 1, 0.898039, 0.631373, 1 )
+custom_colors/font_outline_modulate = Color( 1, 0.6, 0.25098, 1 )
+custom_fonts/font = SubResource( 1 )
+text = "Platformer Game!"
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 16.0
+margin_top = 408.0
+margin_right = 304.0
+margin_bottom = 584.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label3" type="Label" parent="Panel"]
+margin_left = 24.0
+margin_top = 16.0
+margin_right = 195.0
+margin_bottom = 54.0
+custom_colors/font_color = Color( 1, 0.709804, 0.262745, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "CONTROLES :"
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+margin_left = 24.0
+margin_top = 112.0
+margin_right = 72.0
+margin_bottom = 152.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="A" type="Label" parent="Panel/TextureRect"]
+margin_left = 16.0
+margin_right = 112.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "A"
+
+[node name="TextureRect3" type="TextureRect" parent="Panel"]
+margin_left = 96.0
+margin_top = 112.0
+margin_right = 144.0
+margin_bottom = 152.0
+texture = ExtResource( 2 )
+expand = true
+
+[node name="A2" type="Label" parent="Panel/TextureRect3"]
+margin_left = 16.0
+margin_right = 112.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "D"
+
+[node name="Label2" type="Label" parent="Panel"]
+margin_left = 168.0
+margin_top = 112.0
+margin_right = 265.0
+margin_bottom = 150.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "= Move!"
+
+[node name="TextureRect2" type="TextureRect" parent="Panel"]
+margin_left = 24.0
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 101.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Panel/TextureRect2"]
+margin_left = 24.0
+margin_right = 120.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "SPACE"
+
+[node name="Label2" type="Label" parent="Panel/TextureRect2"]
+margin_left = 152.0
+margin_right = 249.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "= JUMP!"
+
+[node name="Panel2" type="Panel" parent="."]
+margin_left = 616.0
+margin_top = 400.0
+margin_right = 1008.0
+margin_bottom = 584.0
+custom_styles/panel = SubResource( 2 )
+
+[node name="Label3" type="Label" parent="Panel2"]
+margin_left = 24.0
+margin_top = 8.0
+margin_right = 195.0
+margin_bottom = 46.0
+custom_colors/font_color = Color( 1, 0.709804, 0.262745, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "ITEMS:"
+
+[node name="TextureRect" type="TextureRect" parent="Panel2"]
+margin_left = 192.0
+margin_top = 64.0
+margin_right = 248.0
+margin_bottom = 96.0
+texture = ExtResource( 5 )
+expand = true
+
+[node name="Label2" type="Label" parent="Panel2/TextureRect"]
+margin_left = 64.0
+margin_right = 183.0
+margin_bottom = 38.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "= Eneme!"
+
+[node name="TextureRect2" type="TextureRect" parent="Panel2"]
+margin_left = 8.0
+margin_top = 40.0
+margin_right = 72.0
+margin_bottom = 104.0
+texture = ExtResource( 4 )
+expand = true
+
+[node name="Label2" type="Label" parent="Panel2/TextureRect2"]
+margin_left = 64.0
+margin_top = 24.0
+margin_right = 161.0
+margin_bottom = 62.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "= You!"
+
+[node name="Label2" type="Label" parent="Panel2"]
+margin_left = 24.0
+margin_top = 128.0
+margin_right = 372.0
+margin_bottom = 166.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Collect 3           Coins to win!"
+
+[node name="TextureRect3" type="TextureRect" parent="Panel2/Label2"]
+margin_left = 128.0
+margin_right = 168.0
+margin_bottom = 40.0
+texture = ExtResource( 6 )
+expand = true
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 353.0
+margin_top = 243.0
+margin_right = 642.0
+margin_bottom = 333.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.572549, 0.819608, 1, 1 )
+custom_colors/font_color_pressed = Color( 0.305882, 0.482353, 0.713726, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "Play"
+flat = true
+script = ExtResource( 8 )
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_PlayButton_pressed"]

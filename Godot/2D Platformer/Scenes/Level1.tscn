@@ -1,0 +1,236 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Level1.tres" type="TileSet" id=2]
+[ext_resource path="res://Sprites/Passthrough.tres" type="TileSet" id=3]
+[ext_resource path="res://Sprites/New folder/set2_background.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/New folder/set2_tiles.png" type="Texture" id=5]
+[ext_resource path="res://Scenes/Coin.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/Coin.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Font.ttf" type="DynamicFontData" id=8]
+[ext_resource path="res://Scenes/HUD.gd" type="Script" id=9]
+[ext_resource path="res://Scenes/Eneme.tscn" type="PackedScene" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 96, 32 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 224, 32 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 8109.5, 178.5 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 0.203922 )
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="DynamicFont" id=5]
+size = 52
+font_data = ExtResource( 8 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 60
+font_data = ExtResource( 8 )
+
+[node name="Level1" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="PurpleSky" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2( 1280, 960 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/PurpleSky"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="FarAwayBlocks" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.921569, 0.921569, 0.921569, 0.823529 )
+motion_scale = Vector2( 0.3, 0.3 )
+motion_offset = Vector2( 0, -1000 )
+motion_mirroring = Vector2( 2560, 1920 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/FarAwayBlocks"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="MiddleBlock" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.894118, 0.894118, 0.894118, 0.635294 )
+motion_scale = Vector2( 0.5, 0.5 )
+motion_offset = Vector2( 0, -500 )
+motion_mirroring = Vector2( 1600, 2100 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/MiddleBlock"]
+scale = Vector2( 2.5, 2.5 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="NearbyBlocks" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color( 0.752941, 0.752941, 0.752941, 0.392157 )
+motion_scale = Vector2( 0.7, 0.7 )
+motion_mirroring = Vector2( 1120, 840 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/NearbyBlocks"]
+scale = Vector2( 1.75, 1.75 )
+texture = ExtResource( 5 )
+centered = false
+
+[node name="TilesOneway" type="TileMap" parent="."]
+tile_set = ExtResource( 3 )
+collision_layer = 2
+collision_mask = 13
+format = 1
+tile_data = PoolIntArray( 262136, 2, 0, 262137, 2, 0, 262138, 2, 0, 262139, 2, 0, 262140, 2, 0, 262141, 2, 0, 262142, 2, 0, 327672, 0, 0, 327673, 0, 0, 327674, 0, 0, 327675, 0, 0, 327676, 0, 0, 327677, 0, 0, 327678, 0, 0, 393208, 0, 0, 393209, 0, 0, 393210, 0, 0, 393211, 0, 0, 393212, 0, 0, 393213, 0, 0, 393214, 0, 0, 458744, 0, 0, 458745, 0, 0, 458746, 0, 0, 458747, 0, 0, 458748, 2, 0, 458749, 2, 0, 458750, 2, 0, 524280, 0, 0, 524281, 0, 0, 524282, 0, 0, 524283, 0, 0, 524284, 0, 0, 524285, 0, 0, 524286, 0, 0, 589816, 0, 0, 589817, 0, 0, 589818, 0, 0, 589819, 0, 0, 589820, 0, 0, 589821, 0, 0, 589822, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="TilesOneway"]
+collision_layer = 2
+collision_mask = 13
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TilesOneway/StaticBody2D"]
+position = Vector2( -160, 416 )
+shape = SubResource( 1 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="TilesOneway/StaticBody2D"]
+position = Vector2( -288, 224 )
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="Tiles Solid" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+collision_layer = 2
+collision_mask = 13
+format = 1
+tile_data = PoolIntArray( -38666160, 2, 0, -655377, 0, 0, -589841, 0, 0, -524305, 0, 0, -458769, 0, 0, -393233, 0, 0, -327697, 0, 0, -262161, 0, 0, -196625, 0, 0, -131089, 0, 0, -65553, 0, 0, -17, 0, 0, 65519, 0, 0, 131055, 0, 0, 196591, 0, 0, 262127, 0, 0, 327663, 0, 0, 393199, 0, 0, 458735, 0, 0, 523201, 0, 0, 524271, 0, 0, 589807, 0, 0, 655343, 0, 0, 655344, 2, 0, 655345, 2, 0, 655346, 2, 0, 655347, 2, 0, 655352, 2, 0, 655353, 2, 0, 655354, 2, 0, 655355, 2, 0, 655356, 2, 0, 655357, 2, 0, 655358, 2, 0, 589826, 2, 0, 589827, 2, 0, 589828, 2, 0, 589829, 2, 0, 589830, 2, 0, 589831, 2, 0, 589832, 2, 0, 589835, 2, 0, 589836, 2, 0, 589837, 2, 0, 589838, 2, 0, 589839, 2, 0, 589840, 2, 0, 589841, 2, 0, 589842, 2, 0, 589843, 2, 0, 589844, 2, 0, 589845, 2, 0, 589846, 2, 0, 589847, 2, 0, 589848, 2, 0, 589849, 2, 0, 589850, 2, 0, 589851, 2, 0, 589852, 2, 0, 589853, 2, 0, 589854, 2, 0, 590895, 0, 0, 720879, 0, 0, 720880, 0, 0, 720881, 0, 0, 720882, 0, 0, 720883, 0, 0, 720888, 0, 0, 720889, 0, 0, 720890, 0, 0, 720891, 0, 0, 720892, 0, 0, 720893, 0, 0, 720894, 0, 0, 655362, 0, 0, 655363, 0, 0, 655364, 0, 0, 655365, 0, 0, 655366, 0, 0, 655367, 0, 0, 655368, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 655385, 0, 0, 655386, 0, 0, 655387, 0, 0, 655388, 0, 0, 655389, 0, 0, 655390, 0, 0, 24051730, 2, 0 )
+
+[node name="Fall Zone" type="Area2D" parent="."]
+position = Vector2( 4441, 717 )
+collision_layer = 4
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fall Zone"]
+position = Vector2( 2578.5, 168.5 )
+shape = SubResource( 3 )
+
+[node name="Coins" type="Node" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -445, 130 )
+
+[node name="Coin5" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -157, 336 )
+
+[node name="Coin4" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -456, 545 )
+
+[node name="Coin10" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 158, 503 )
+
+[node name="Coin11" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 272, 502 )
+
+[node name="Coin12" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 392, 501 )
+
+[node name="Coin13" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( 535, 504 )
+
+[node name="Coin7" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -126, 546 )
+
+[node name="Coin6" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -355, 545 )
+
+[node name="Coin9" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -235, 544 )
+
+[node name="Coin2" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -225, 128 )
+
+[node name="Coin8" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -127, 127 )
+
+[node name="Coin3" parent="Coins" instance=ExtResource( 6 )]
+position = Vector2( -335, 126 )
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource( 9 )
+
+[node name="Panel" type="Panel" parent="HUD"]
+margin_left = 44.0
+margin_top = 29.0
+margin_right = 300.0
+margin_bottom = 120.0
+custom_styles/panel = SubResource( 4 )
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+margin_left = 74.0
+margin_top = 44.0
+margin_right = 135.0
+margin_bottom = 105.0
+texture = ExtResource( 7 )
+expand = true
+
+[node name="x" type="Label" parent="HUD"]
+margin_left = 157.0
+margin_top = 41.0
+margin_right = 197.0
+margin_bottom = 104.0
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "x"
+
+[node name="Coins" type="Label" parent="HUD"]
+margin_left = 196.0
+margin_top = 41.0
+margin_right = 279.0
+margin_bottom = 113.0
+custom_colors/font_color = Color( 1, 0.8, 0, 1 )
+custom_fonts/font = SubResource( 6 )
+text = "00"
+valign = 1
+
+[node name="Enemes" type="Node2D" parent="."]
+position = Vector2( -437, 429 )
+scale = Vector2( 1.5, 1.5 )
+
+[node name="Eneme" parent="Enemes" instance=ExtResource( 10 )]
+
+[node name="Eneme2" parent="Enemes" instance=ExtResource( 10 )]
+position = Vector2( -0.666656, -268 )
+
+[node name="Eneme3" parent="Enemes" instance=ExtResource( 10 )]
+position = Vector2( 451.333, 6.66669 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( -929, 230 )
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+current = true
+limit_left = -1024
+limit_top = -700
+limit_bottom = 700
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+editor_draw_limits = true
+
+[connection signal="body_entered" from="Fall Zone" to="Player" method="_on_Fall_Zone_body_entered"]
+[connection signal="coin_collected" from="Coins/Coin" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin5" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin4" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin10" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin11" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin12" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin13" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin7" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin6" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin9" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin2" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin8" to="HUD" method="_on_coin_collected"]
+[connection signal="coin_collected" from="Coins/Coin3" to="HUD" method="_on_coin_collected"]
