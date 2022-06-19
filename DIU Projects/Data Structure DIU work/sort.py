@@ -9,7 +9,7 @@ def insertionSort(arr):
                 j -= 1
             arr[j + 1] = key
             print(arr)
-            print(arr[j],arr[i])
+            print(arr[j], arr[i])
 
     elif order == 2:
         for i in range(1, 7):
@@ -20,7 +20,7 @@ def insertionSort(arr):
                 j -= 1
             arr[j + 1] = key
             print(arr)
-            print(arr[j],arr[i])
+            print(arr[j], arr[i])
     else:
         print("---- Error ----")
 
