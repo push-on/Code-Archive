@@ -27,12 +27,12 @@ input.addEventListener("keypress", function (event) {
 });
 button2.addEventListener("click", function () {
 	ul.removeChild(ul.lastChild);
-    print("hello")
+	print("hello");
 
 });
 function print(stuff) {
-	const div = document.getElementById('div')
-	const text = document.createElement('p')
-	text.innerHTML = stuff
-	div.appendChild(text)
+	const div = document.getElementById('div');
+	const text = document.createElement('p');
+	text.innerHTML = stuff;
+	div.appendChild(text);
 }

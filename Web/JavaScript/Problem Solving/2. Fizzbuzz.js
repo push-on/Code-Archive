@@ -1,13 +1,13 @@
 for (let i = 1; i <= 100; i++) {
-	let output = ""
+	let output = "";
 	if (i % 3 == 0) {
-		output += "fizz"
+		output += "fizz";
 	}
 	if (i % 5 == 0) {
-		output += "buzz"
+		output += "buzz";
 	}
 	if (output == "") {
-		output = i
+		output = i;
 	}
-	console.log(output)
+	console.log(output);
 }

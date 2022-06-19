@@ -11,11 +11,11 @@ existingTodos.forEach(todo => { addTodo(todo); });
 
 function addTodo(todoText) {
     todoData.push(todoText);
-    const li = document.createElement('li')
+    const li = document.createElement('li');
     li.innerHTML = todoText;
     todoList.appendChild(li);
     localStorage.setItem('todos', JSON.stringify(todoData));
-    input.value = ''
+    input.value = '';
 }
 
 _submit.addEventListener("click", function (event) {
