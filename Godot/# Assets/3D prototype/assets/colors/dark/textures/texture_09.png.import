@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/texture_09.png-0aadc430234a3283776528ef27a644de.s3tc.stex"
-path.etc2="res://.import/texture_09.png-0aadc430234a3283776528ef27a644de.etc2.stex"
+path.s3tc="res://.import/texture_09.png-20b167558c6f9f0b64b2d948e32a1cc8.s3tc.stex"
+path.etc2="res://.import/texture_09.png-20b167558c6f9f0b64b2d948e32a1cc8.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/kenney_prototypes/assets/colors/dark/textures/texture_09.png"
-dest_files=[ "res://.import/texture_09.png-0aadc430234a3283776528ef27a644de.s3tc.stex", "res://.import/texture_09.png-0aadc430234a3283776528ef27a644de.etc2.stex" ]
+source_file="res://# Assets/3D prototype/assets/colors/dark/textures/texture_09.png"
+dest_files=[ "res://.import/texture_09.png-20b167558c6f9f0b64b2d948e32a1cc8.s3tc.stex", "res://.import/texture_09.png-20b167558c6f9f0b64b2d948e32a1cc8.etc2.stex" ]
 
 [params]
 

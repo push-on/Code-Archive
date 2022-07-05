@@ -27,7 +27,6 @@ input.addEventListener("keypress", function (event) {
 });
 button2.addEventListener("click", function () {
 	ul.removeChild(ul.lastChild);
-	print("hello");
 
 });
 function print(stuff) {

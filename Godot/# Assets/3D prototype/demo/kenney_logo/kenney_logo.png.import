@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/kenney_logo.png-07504ce2288864bc1181805f05962adf.s3tc.stex"
-path.etc2="res://.import/kenney_logo.png-07504ce2288864bc1181805f05962adf.etc2.stex"
+path.s3tc="res://.import/kenney_logo.png-23db8a6e020f80b3582e85bf1c342676.s3tc.stex"
+path.etc2="res://.import/kenney_logo.png-23db8a6e020f80b3582e85bf1c342676.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://addons/kenney_prototypes/demo/kenney_logo/kenney_logo.png"
-dest_files=[ "res://.import/kenney_logo.png-07504ce2288864bc1181805f05962adf.s3tc.stex", "res://.import/kenney_logo.png-07504ce2288864bc1181805f05962adf.etc2.stex" ]
+source_file="res://# Assets/3D prototype/demo/kenney_logo/kenney_logo.png"
+dest_files=[ "res://.import/kenney_logo.png-23db8a6e020f80b3582e85bf1c342676.s3tc.stex", "res://.import/kenney_logo.png-23db8a6e020f80b3582e85bf1c342676.etc2.stex" ]
 
 [params]
 

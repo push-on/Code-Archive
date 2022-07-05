@@ -1,11 +1,13 @@
-
-const form = document.querySelector('form');
-const input = document.querySelector("[name='todo']");
+const input = document.getElementById('inputs');
 const todoList = document.getElementById('todos');
+const _submit = document.getElementById('enter');
+const _Delete = document.getElementById('delete');
 
 const existingTodos = JSON.parse(localStorage.getItem('todos')) || [];
 const todoData = [];
-existingTodos.forEach(todo => { addTodo(todo); });
+existingTodos.forEach((todo) => {
+    addTodo(todo);
+});
 
 function addTodo(todoText) {
     todoData.push(todoText);
@@ -16,17 +18,14 @@ function addTodo(todoText) {
     input.value = '';
 }
 
-form.onsubmit = (event) => {
+_submit.addEventListener('click', function (event) {
     event.preventDefault();
-    addTodo(input.value);
-    test("Hello");
-};
-// todoData.pop();
-// ul.removeChild(ul.lastChild);
-// localStorage.removeItem('todos');
-function test(stuff) {
-    const div = document.getElementById('div');
-    const text = document.createElement('h1');
-    text.innerHTML = stuff;
-    div.appendChild(text);
-}
+    if (input.value.length > 0) {
+        addTodo(input.value);
+    }
+});
+
+_Delete.addEventListener('click', function (event) {
+    event.preventDefault();
+    console.log("Delete");
+});

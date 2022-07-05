@@ -2,12 +2,12 @@
 
 importer="scene"
 type="PackedScene"
-path="res://.import/cube.gltf-8c6c5f848a346b67d6c9bc9f4d51f7f5.scn"
+path="res://.import/cube.gltf-3a145ee1378668a052a541112dd68157.scn"
 
 [deps]
 
-source_file="res://addons/kenney_prototypes/assets/cube/export/cube.gltf"
-dest_files=[ "res://.import/cube.gltf-8c6c5f848a346b67d6c9bc9f4d51f7f5.scn" ]
+source_file="res://# Assets/3D prototype/assets/cube/export/cube.gltf"
+dest_files=[ "res://.import/cube.gltf-3a145ee1378668a052a541112dd68157.scn" ]
 
 [params]
 
@@ -20,6 +20,7 @@ nodes/use_legacy_names=false
 materials/location=1
 materials/storage=1
 materials/keep_on_reimport=true
+meshes/octahedral_compression=true
 meshes/compress=true
 meshes/ensure_tangents=true
 meshes/storage=0
