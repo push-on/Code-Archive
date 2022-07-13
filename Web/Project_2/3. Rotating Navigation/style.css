@@ -1,6 +1,26 @@
-body {
+*{
+    box-sizing: border-box;
+}
+
+
+body{
+    background-color: #1a1a1a;
+    color: #808080;
     font-family: system-ui;
-    background: #000;
-    color: rgb(238, 233, 217);
+    overflow-x: hidden;
     margin: 0;
+}
+
+.container{
+    background-color: #fafafa;
+    transform-origin: top left;
+    transition: transform 0.5s;
+}
+
+.container.show-nav{
+    transform: rotate(-20deg);
+}
+
+img{
+    width: 200px;
 }
