@@ -1,9 +1,0 @@
-0b7126e0c6e86d3ec295a72f5aa6e0bd
-::res://::1651338790
-icon.png::CompressedTexture2D::7747580990812180542::1651338235::1651338242::1::::<><>::
-::res://Assets/::1651338790
-Character Sprite.png::CompressedTexture2D::3594842018517619061::1651338774::1651338790::1::::<><>::
-::res://Levels/::1651338743
-level_1.tscn::PackedScene::4580274443283131768::1651338743::0::1::::<><>::uid://c5dj7uwaq8aav
-::res://Nodes/::1651338743
-player_1.tscn::PackedScene::6885304492604586269::1651338743::0::1::::<><>::
